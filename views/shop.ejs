@@ -1,0 +1,16 @@
+<main>
+    <h2>Page Shop</h2>
+    <p> Affichage de tous les produits</p>
+ 
+    <% datas.forEach(data => { %>
+
+            <%= data.title %>
+            <%= data.category %>
+            <%= data.url_img %>
+             
+            <a href="/shop/<%= data.id%>">detail du produit <%= data.id%></a>
+                        <br/>
+     
+    <% }) %>
+
+</main>

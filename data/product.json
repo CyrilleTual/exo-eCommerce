@@ -1,0 +1,29 @@
+[
+    {
+        "id": "3913686f-3698-4c64-9ca2-dd0d760d66be",
+        "title": "zzzzzzzzzzzzzzzzzz",
+        "description": "zzzzzzz",
+        "seller": "zzzzz",
+        "price": 1819684,
+        "category": "vêtement",
+        "url_img": "no_img.png"
+    },
+    {
+        "id": "a9352343-53fe-472a-adb1-cb6009d5f490",
+        "title": "ggggggg",
+        "description": "ggg",
+        "seller": "ggg",
+        "price": 51,
+        "category": "multimédia",
+        "url_img": "no_img.png"
+    },
+    {
+        "id": "a942343-53fe-472a-adb1-cb6009gfd490",
+        "title": "ggggggg",
+        "description": "ggg",
+        "seller": "ggg",
+        "price": 99,
+        "category": "animaux",
+        "url_img": "no_img.png"
+    }
+]
