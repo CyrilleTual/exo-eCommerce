@@ -1,0 +1,44 @@
+@import 'reset';
+
+$color1: #f6ead4;
+$color2: #a2a595;
+$color3: #b4a284;
+$color4: #1d3c45de;
+
+
+nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+ 
+}
+a {
+    display: block;
+    color : #f2e6e6;
+    background-color: $color4;
+    margin: 10px;
+    padding: 15px 10px; 
+    
+    text-align: center;
+    border-radius: 20px;
+}
+
+.card{
+    margin: auto;
+    max-width: 90%;
+    background-color: $color1;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid $color4;
+    border-radius: 10px;
+    a{
+        width: 180px;
+        margin: auto;
+    }
+}
+
+img{
+    width: 150px;
+}
+
+

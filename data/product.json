@@ -6,7 +6,7 @@
         "seller": "zzzzz",
         "price": 1819684,
         "category": "vêtement",
-        "url_img": "no_img.png"
+        "url_img": "img/pull.jpeg"
     },
     {
         "id": "a9352343-53fe-472a-adb1-cb6009d5f490",
@@ -15,7 +15,7 @@
         "seller": "ggg",
         "price": 51,
         "category": "multimédia",
-        "url_img": "no_img.png"
+        "url_img": "img/tvset.jpg"
     },
     {
         "id": "a942343-53fe-472a-adb1-cb6009gfd490",
@@ -24,6 +24,6 @@
         "seller": "ggg",
         "price": 99,
         "category": "animaux",
-        "url_img": "no_img.png"
+        "url_img": "img/cat.jpeg"
     }
 ]
