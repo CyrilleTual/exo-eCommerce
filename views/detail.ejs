@@ -1,10 +1,18 @@
 <main>
-    <h1>Ici la page Détails</h1>
+    <h2>Voyons en détail :</h2>
 
-    <%= data.title %>
-        <%= data.description%>
-            <%= data.seller %>
-                <%= data.price %>
-
+    <div class="wrapper" >  
+            <article class="card">
+                <p>Dans la catégorie : <%= data.category %></p>
+                <h3>
+                    <%= data.title %>
+                </h3>
+                <img src="<%= data.url_img %>" alt="<%= data.title %>">
+                <p><%= data.description%></p>
+                <p>Ce produit est proposé par notre partenaire <%= data.seller %></p>
+                <span><%= data.price %></span>
+            </article>
+         
+    </div>
 
 </main>

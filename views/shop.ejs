@@ -1,14 +1,19 @@
-<main>
+<main >
     <h2>Tous nos produits </h2>
     <p>Nous pouvons vous proposer:</p>
  
+    <div class="wrapper">
+
+   
     <% datas.forEach(data => { %>
         <article class="card">
+            <p>Dans la catégorie : <%= data.category %>
+            </p>
             <h3><%= data.title %></h3>
-            <img src="<%= data.url_img %>" alt="<%= data.title %>">
-            <p>Dans la catégorie : <%= data.category %></p>
-            <a href="/shop/<%= data.id%>">Plus d'infos ici</a>
+            <img src="<%= data.url_img %>" alt="<%= data.title %>">  
+            <a href="/detail/<%= data.id%>">Plus d'infos ici</a>
         </article>
     <% }) %>
+    </div>
 
 </main>

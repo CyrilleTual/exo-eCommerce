@@ -55,9 +55,17 @@ a {
   border-radius: 20px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .card {
-  margin: auto;
-  max-width: 90%;
+  width: 45%;
+  margin: 1rem;
   background-color: #f6ead4;
   padding: 5px;
   margin-top: 10px;
