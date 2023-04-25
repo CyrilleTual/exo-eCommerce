@@ -1,27 +1,27 @@
 [
     {
         "id": "3913686f-3698-4c64-9ca2-dd0d760d66be",
-        "title": "zzzzzzzzzzzzzzzzzz",
-        "description": "zzzzzzz",
-        "seller": "zzzzz",
-        "price": 1819684,
+        "title": "Pull 100% laine Française",
+        "description": "Tout plaquer, changer de vie, s'installer dans le larzac pour élever des moutons. Tondre leur laine et essayer de tricoter un pull. s'appercevoir que c'est difficile et regarder sur internet, réaliser que sur le Larzac ça ne capte pas",
+        "seller": "le-tshirt-propre.fr",
+        "price": 127.50,
         "category": "vêtement",
         "url_img": "img/pull.jpeg"
     },
     {
         "id": "a9352343-53fe-472a-adb1-cb6009d5f490",
-        "title": "ggggggg",
-        "description": "ggg",
-        "seller": "ggg",
+        "title": "TV QLED SamVaBien",
+        "description": "Enfin une télé avec des images qui bougent !",
+        "seller": "patissier",
         "price": 51,
         "category": "multimédia",
         "url_img": "img/tvset.jpg"
     },
     {
         "id": "a942343-53fe-472a-adb1-cb6009gfd490",
-        "title": "ggggggg",
-        "description": "ggg",
-        "seller": "ggg",
+        "title": "Special planChat !",
+        "description": "Juste bleu ou à point vous aller vous régaler !",
+        "seller": "SPA compagnie",
         "price": 99,
         "category": "animaux",
         "url_img": "img/cat.jpeg"

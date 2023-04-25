@@ -6,8 +6,15 @@ const PORT = 9001;
 import * as fs from 'fs';        //equivalent de  : const fs = require('fs');        // pour le readFile
 import * as path from 'path';   //equivalent de  : const path = require("path");    // pour le dir name
 import * as url from 'url';
+import dayjs from 'dayjs';
+import { writeConsole } from "./components/test.js";
+
+
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 //console.log(__dirname);
+
+const today = dayjs().format('DD/MM/YYYY') ;
+
 
 
 // chemin des views, permet d'utiliser Render directement avec le nom de la view
@@ -37,14 +44,16 @@ const check = (req, res, next) => {
 app.get("/", check, ( req, res)=>{
     
     let datas = res.locals.datas;
+    console.log (today)
+
     // ici on selectionne puis passe une seul produit à la page home :
     const randomItem = datas[Math.floor(Math.random() * datas.length)];
-    res.status(200).render("layout",{template: "./home" , data: randomItem});
+    res.status(200).render("layout", {template: "./home" , data: randomItem , today: today});
 })
 
 // shop complet
 app.get("/shop", check, ( req, res)=>{
-    res.status(200).render("layout",{template: "./shop", datas: res.locals.datas});
+    res.status(200).render("layout",{template: "./shop", datas: res.locals.datas, today: today});
 })
 
 // detail sur un produit 
@@ -53,12 +62,12 @@ app.get("/detail/:id", check, ( req, res)=>{
     let datas = res.locals.datas;  // recupère les produits 
     // on filtre sur l'id passé par l'url
     const [dataFiltered] = datas.filter(d => d.id === (req.params.id));  
-    res.status(200).render("layout",{template: "./detail", data: dataFiltered});
+    res.status(200).render("layout", {template: "./detail", data: dataFiltered, today: today});
 })
 
 // authentification --- Affichage -----
 app.get("/log", (req, res) => {
-    res.status(200).render("layout", {template: "./log"})
+    res.status(200).render("layout", {template: "./log", today: today})
 })
 
 // authentification --- traitement du formulaire -----
@@ -72,15 +81,12 @@ app.post ("/log", (req, res ) => {
         //   }, 1000)
     } else {
         app.locals.alias = req.body.alias;
-        console.log(app.locals.alias)
+        console.log('ici',app.locals.alias);  // affichage 
+        writeConsole(app.locals.alias); // affichage !!
         res.status(301).redirect("/");
     }
 });
 
-// app.post("*", (req,res)=>{
-
-//     console.log ("pb mon gars !")
-// })
 
 
 app.listen(PORT, ()=>{
