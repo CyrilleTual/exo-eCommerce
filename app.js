@@ -3,8 +3,7 @@ import express  from "express";
 const app = express();
 const PORT = 9001;
 
-import * as fs from 'fs';  
-//const path = require("path");       //equivalent de  : const fs = require('fs');        // pour le readFile
+import * as fs from 'fs';        //equivalent de  : const fs = require('fs');        // pour le readFile
 import * as path from 'path';   //equivalent de  : const path = require("path");    // pour le dir name
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
@@ -20,7 +19,6 @@ app.use(express.static ("public"));
 app.use(express.urlencoded({extended: true}));
 
 // middleWare qui va lire le fichier de datas à chaque Get
-
 const check = (req, res, next) => {  
     fs.readFile(path.join(__dirname, "data/product.json"), (error, data) => {
         if(error) {
@@ -39,7 +37,7 @@ const check = (req, res, next) => {
 app.get("/", check, ( req, res)=>{
     
     let datas = res.locals.datas;
-    // ici on selectionne puisse passe une seul produit à la page home :
+    // ici on selectionne puis passe une seul produit à la page home :
     const randomItem = datas[Math.floor(Math.random() * datas.length)];
     res.status(200).render("layout",{template: "./home" , data: randomItem});
 })
@@ -53,9 +51,9 @@ app.get("/shop", check, ( req, res)=>{
 app.get("/detail/:id", check, ( req, res)=>{
 
     let datas = res.locals.datas;  // recupère les produits 
-    const [dataFiltered] = datas.filter(d => d.id === (req.params.id));  // on filtre sur l'id passé par l'url
+    // on filtre sur l'id passé par l'url
+    const [dataFiltered] = datas.filter(d => d.id === (req.params.id));  
     res.status(200).render("layout",{template: "./detail", data: dataFiltered});
-
 })
 
 // authentification --- Affichage -----
@@ -77,11 +75,12 @@ app.post ("/log", (req, res ) => {
         console.log(app.locals.alias)
         res.status(301).redirect("/");
     }
-
 });
 
+// app.post("*", (req,res)=>{
 
-
+//     console.log ("pb mon gars !")
+// })
 
 
 app.listen(PORT, ()=>{
