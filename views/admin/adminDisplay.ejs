@@ -1,1 +1,27 @@
-<h1>ici on regarde le stock</h1>
+<h1>ici on regarde les Produits</h1>
+
+<div class="wrapper">
+    <% datas.forEach(data=> { %>
+
+        <article class="card">
+            <p>Dans la catégorie : <%= data.category %>
+            </p>
+            <h3>
+                <%= data.title %>
+            </h3>
+            <img src="/<%= data.url_img %>" alt="<%= data.title %>">
+            <p>
+                <%= data.description%>
+            </p>
+            <p>Vendeur: <%= data.seller %>  <span>Prix : <%= data.price %> Euros </span>
+            </p>
+
+            <a href="/admin/removeProduct/<%= data.id%>">Remove</a>
+        </article>
+
+
+        <% }) %>
+
+        
+        <a href="/admin/addProduct/">Ajouter Un Produit </a>
+</div>

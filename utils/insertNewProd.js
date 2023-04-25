@@ -18,7 +18,7 @@ export function newProd (datas,prodToAdd){
         // ajout du nouveau produit au produits existants
         datas.push(prodToAdd)
 
-    
+
         // ecriture du nouveau datas
 
         fs.writeFile("./data/product.json", JSON.stringify(datas), err => {
@@ -28,7 +28,5 @@ export function newProd (datas,prodToAdd){
         // fichier écrit avec succès
         });
 
-
-        console.log (datas)
 
 }
