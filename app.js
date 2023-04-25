@@ -35,11 +35,10 @@ const check = (req, res, next) => {
     });
 }
 
-
+// landing page : un seul produit aléatoire 
 app.get("/", check, ( req, res)=>{
     
     let datas = res.locals.datas;
-
     // ici on selectionne puisse passe une seul produit à la page home :
     const randomItem = datas[Math.floor(Math.random() * datas.length)];
     res.status(200).render("layout",{template: "./home" , data: randomItem});
@@ -51,7 +50,7 @@ app.get("/shop", check, ( req, res)=>{
 })
 
 // detail sur un produit 
-app.get("/shop/:id", check, ( req, res)=>{
+app.get("/detail/:id", check, ( req, res)=>{
 
     let datas = res.locals.datas;  // recupère les produits 
     const [dataFiltered] = datas.filter(d => d.id === (req.params.id));  // on filtre sur l'id passé par l'url
@@ -60,17 +59,16 @@ app.get("/shop/:id", check, ( req, res)=>{
 })
 
 // authentification --- Affichage -----
-app.get("/auth", (req, res) => {
-    res.status(200).render("layout", {template: "./auth"})
+app.get("/log", (req, res) => {
+    res.status(200).render("layout", {template: "./log"})
 })
 
 // authentification --- traitement du formulaire -----
-app.post ("/auth", (req, res ) => {
+app.post ("/log", (req, res ) => {
     // capture de l'alias via req.body
     if(!req.body.alias){
       res.status(400);
       res.send("Faut remplir le champ SVP !!");
-       
         //   setTimeout (()=>{
         //     res.redirect("./home");
         //   }, 1000)
@@ -81,10 +79,6 @@ app.post ("/auth", (req, res ) => {
     }
 
 });
-
-
-
-
 
 
 
