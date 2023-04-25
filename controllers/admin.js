@@ -22,6 +22,7 @@ export const adminFormAdd = ( req, res)=>{
     });
 };
 
+// ajout d'un produit 
 export const addProduct = ( req, res)=>{
 
         const datas = res.locals.datas;
@@ -33,18 +34,13 @@ export const addProduct = ( req, res)=>{
  
 };
 
+// remove d'un produit 
 export const removeProduct = ( req, res)=>{
 
         const datas = res.locals.datas;
         const idToRemove = (req.params.id)
 
         delProd(datas,idToRemove)
-
-        // console.log (idToRemove)
-
-        // const result = datas.filter(data => data.id !== idToRemove);
-
-        //  console.log (result)
 
         res.status(301).redirect("/admin");
  
