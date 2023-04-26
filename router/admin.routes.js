@@ -4,8 +4,8 @@ import { addProduct, adminDisplay, adminFormAdd, adminView, removeProduct } from
 
 const router = Router();
 
-router.get('/', adminView);
-router.get('/display', adminDisplay)
+router.get('/', adminView);                              // chemin:   /admin/
+router.get('/display', adminDisplay)                     //           /admin/display            
 router.get('/addProduct', adminFormAdd)
 router.post('/add', addProduct)
 router.get('/removeProduct/:id', removeProduct)

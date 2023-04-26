@@ -18,10 +18,10 @@ app.set ("view engine", "ejs")
 
 
 app
-    .use(express.static ("public")) 
-    .use(express.urlencoded({extended: true}))
-    .use(check)
-    .use(router);
+    .use(express.static ("public"))  // defini le repertoire des fichiers statics
+    .use(express.urlencoded({extended: true}))  // permet de recuperer les formulaires
+    .use(check)  // recuperation des données
+    .use(router); // va chercher le routeur
 
 
 // // authentification --- Affichage -----
