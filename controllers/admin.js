@@ -31,6 +31,12 @@ export const addProduct = ( req, res)=>{
         const datas = res.locals.datas;
         let prodToAdd = req.body;
 
+        console.log (prodToAdd);
+
+
+
+
+
         newProd(datas,prodToAdd);
 
         res.status(301).redirect("/admin");
