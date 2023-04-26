@@ -1,0 +1,36 @@
+<main>
+    <section>
+        <h1>Ici on Modife</h1>
+        <form action="/admin/mod" method="post">
+
+            <input type="hidden" name="id" value= <%= data.id %>>
+
+            <label for="title"> title </label>
+            <input  type="text" 
+                    name="title"    
+                    id="title"  
+                    value="<%= data.title %>"><br />
+
+            <label  for="description"> description </label>
+            <input  type="text" 
+                    name="description" 
+                    id="description"
+                    value="<%= data.description %>">
+                    <br />
+
+            <label for="seller"> seller </label>
+            <input type="text" name="seller" id="seller" value="<%= data.seller %>"> <br />
+
+            <label for="price"> price </label>
+            <input type="text" name="price" id="price" value="<%= data.price %>"> <br />
+
+            <label for="category"> category </label>
+            <input type="text" name="category" id="category" value="<%= data.category %>"> <br />
+
+            <label for="url_img"> url_img </label>
+            <input type="text" name="url_img" id="url_img" disabled="disabled"><br />
+
+            <input type="submit" value="Valider">
+        </form>
+    </section>
+</main>

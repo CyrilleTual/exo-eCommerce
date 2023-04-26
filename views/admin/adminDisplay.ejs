@@ -16,12 +16,13 @@
             <p>Vendeur: <%= data.seller %>  <span>Prix : <%= data.price %> Euros </span>
             </p>
 
-            <a href="/admin/removeProduct/<%= data.id%>">Remove</a>
+            <a href="/admin/modifyProduct/<%= data.id %>">Modify</a><a href="/admin/removeProduct/<%= data.id%>">Remove</a>
+            
         </article>
 
 
         <% }) %>
 
         
-        <a href="/admin/addProduct/">Ajouter Un Produit </a>
+       
 </div>
