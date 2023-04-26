@@ -44,14 +44,12 @@ export function modifyProduct(data){
 }
 
 export function modProd(datas, toMod){
-    // on remove puis add 
-
-    const newDatas = datas.filter(data => data.id !== toMod.id);
-
-    newDatas.push(toMod);
-
+    
+    // on remove 
+    const newDatas = datas.filter(data => data.id !== toMod.id); // création d'un nouveau tableau
+    //puis add 
+    newDatas.push(toMod); // modification du tableau crée 
     write(newDatas);
-
 }
 
 
