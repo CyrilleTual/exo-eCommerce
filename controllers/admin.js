@@ -36,13 +36,11 @@ export const addProduct = ( req, res)=>{
 
         const customOptions = { uploadDir: uploadDir , keepExtensions: true, 
              maxFileSize: 5 * 1024 * 1024 * 1024, 
-            multiples: true };
+            multiples: false };
 
         const form = formidable(customOptions);   
 
         form.parse(req, async (err, fields, files) => {
-           // console.log(fields);
-            //console.log(files);
             if (err) {
                 console.log("Error parsing the files");
                 return res.status(400).json({
@@ -58,7 +56,7 @@ export const addProduct = ( req, res)=>{
             // creates a valid name by removing spaces
             const fileName = encodeURIComponent(file.originalFilename.replace(/\s/g, "-"));
 
-            // a utiliser pour afficher le bon nom si besoin 
+            // a utiliser pour afficher le bon nom si besoin (alt sur img)
             // const nameToDisplay = decodeURIComponent(fileName)
           
             // nom de stockage : file.newFileName    
