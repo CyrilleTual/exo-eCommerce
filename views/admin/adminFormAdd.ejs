@@ -1,7 +1,7 @@
 <main>
     <section>
         <h1>Ici on ajoute</h1>
-        <form action="/admin/add" method="post">
+        <form action="/admin/add" method="post"  enctype="multipart/form-data">
 
             <label for="title"> title </label>
             <input type="text" name="title" id="title"> <br />
@@ -18,11 +18,8 @@
             <label for="category"> category </label>
             <input type="text" name="category" id="category"> <br />
 
-            <label for="url_img"> url_img </label>
-            <input type="text" name="url_img" id="url_img"> <br />
-
-            <label for="filetoupload"> filetoupload </label>
-            <input type="file" name="filetoupload">
+            <label for="myFile"> myFile </label>
+            <input type="file" name="myFile" multiple="multiple">
 
             <input type="submit" value="Valider">
         </form>

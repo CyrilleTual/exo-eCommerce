@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import fs from "fs";
 
 
+
 function write (datas) {
      fs.writeFile("./data/product.json", JSON.stringify(datas), err => {
         if (err) {
@@ -21,7 +22,7 @@ export function newProd (datas,prodToAdd){
     // ajout de l'id au nouvel article 
     prodToAdd.id= id;
     // image par defaut (temporaire)
-    prodToAdd.url_img = "img/default.jpeg"
+    //prodToAdd.url_img = "img/default.jpeg"
 
     // ajout du nouveau produit au produits existants
     datas.push(prodToAdd)
